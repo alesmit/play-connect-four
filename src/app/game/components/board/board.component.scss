@@ -1,0 +1,89 @@
+@import "variables";
+
+.board-parent-container {
+  display: flex;
+  justify-content: center;
+
+  .board-child-container {
+    position: relative;
+
+    .board-overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: $board-border-radius;
+      background-color: transparent;
+      transition: background-color .4s ease;
+
+      span {
+        display: block;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+        font-size: 2rem;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      &.winner {
+        background-color: transparentize($winner-overlay-bg, 0.2);
+      }
+
+      &.loser {
+        background-color: transparentize($loser-overlay-bg, 0.2);
+      }
+
+    }
+
+    table {
+      border-collapse: collapse;
+      border-radius: $board-border-radius;
+      overflow: hidden;
+
+      td {
+        border: none;
+        padding: $board-cell-padding;
+        background: $board-bg;
+        cursor: pointer;
+
+        &.highlight {
+          background: lighten($board-bg, 5%);
+        }
+
+        &.board-disabled {
+          cursor: not-allowed;
+        }
+
+        .cell {
+
+          border: 2px solid darken($board-bg, 4%);
+          height: $board-cell-size;
+          width: $board-cell-size;
+          background: $body-bg;
+          margin: 0 auto;
+          border-radius: 50%;
+
+          &.player1 {
+            background: $player1;
+          }
+          &.player1-ghost {
+            background: transparentize($player1, 0.5);
+          }
+
+          &.player2 {
+            background: $player2;
+          }
+          &.player2-ghost {
+            background: transparentize($player2, 0.5);
+          }
+
+        }
+
+      }
+    }
+
+  }
+
+}

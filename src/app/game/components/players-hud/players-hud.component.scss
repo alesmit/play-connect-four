@@ -1,0 +1,85 @@
+@import "variables";
+
+@keyframes opacity-animation {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@mixin hud-element-common {
+  padding: 10px 20px;
+  min-width: 100px;
+  border-radius: 100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  opacity: 0.3;
+  transition: opacity .4s ease;
+  text-align: center;
+}
+
+.players-hud {
+  display: flex;
+  flex-direction: row;
+
+  .hud-element {
+    flex: 1;
+    display: flex;
+    color: #ffffff;
+
+    &.jus-center {
+      justify-content: center;
+    }
+
+    &.jus-left {
+      justify-content: flex-end;
+    }
+
+    &.jus-right {
+      justify-content: flex-start;
+    }
+
+  }
+
+  .wait {
+    @include hud-element-common;
+    background: $players-hud-wait-bg;
+    animation-name: opacity-animation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  .wait {
+    @include hud-element-common;
+    background: $players-hud-wait-bg;
+  }
+
+  .player-left {
+    margin-right: 10px;
+    @include hud-element-common;
+  }
+
+  .player-right {
+    margin-left: 10px;
+    @include hud-element-common;
+  }
+
+  .player1 {
+    background: $player1;
+  }
+
+  .player2 {
+    background: $player2;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+}

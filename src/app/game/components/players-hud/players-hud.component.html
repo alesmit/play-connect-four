@@ -1,0 +1,28 @@
+<div class="players-hud">
+
+  <div class="hud-element jus-center" *ngIf="playerIds.length === 1">
+    <span class="wait">Waiting for player 2 to connect</span>
+  </div>
+
+  <ng-container *ngIf="playerIds.length === 2">
+    <div class="hud-element jus-left">
+      <div
+        class="player-left"
+        [class.player1]="players[playerIds[0]].role === playerRole.Player1"
+        [class.player2]="players[playerIds[0]].role === playerRole.Player2"
+        [class.active]="activePlayer?.id === players[playerIds[0]].id">
+        {{ players[playerIds[0]].name }}
+      </div>
+    </div>
+    <div class="hud-element jus-right">
+      <div
+        class="player-right"
+        [class.player1]="players[playerIds[1]].role === playerRole.Player1"
+        [class.player2]="players[playerIds[1]].role === playerRole.Player2"
+        [class.active]="activePlayer?.id === players[playerIds[1]].id">
+        {{ players[playerIds[1]].name }}
+      </div>
+    </div>
+  </ng-container>
+
+</div>

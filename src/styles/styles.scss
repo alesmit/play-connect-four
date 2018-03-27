@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Material+Icons");
+@import "../../node_modules/mp.css/dist/mp.css";
+@import "variables";
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: $body-bg;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+app-root {
+  height: 100%;
+}

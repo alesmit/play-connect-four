@@ -1,0 +1,25 @@
+// general
+$body-bg: #f8f8f8;
+$primary: #DC4437;
+
+// input
+$caret-color: #444;
+$input-label-color: #2ca6e9;
+$input-underline-color: #2ca6e9;
+
+// players
+$player1: #546A76;
+$player2: #30BCED;
+
+// board
+$board-bg: #dadada;
+$board-cell-size: 32px;
+$board-border-radius: 15px;
+$board-cell-padding: 5px;
+
+// winner and loser
+$winner-overlay-bg: #8BC34A;
+$loser-overlay-bg: $primary;
+
+// players hud
+$players-hud-wait-bg: $primary;

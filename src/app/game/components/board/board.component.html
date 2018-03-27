@@ -1,0 +1,37 @@
+<div class="board-parent-container">
+  <div class="board-child-container">
+
+    <table #tableEl>
+      <tr *ngFor="let row of board; let r = index">
+        <td
+          *ngFor="let col of row; let c = index"
+          (mouseenter)="onCellHover(r, c, true)"
+          (mouseleave)="onCellHover(r, c, false)"
+          (click)="onCellClick(r, c)"
+          [class.board-disabled]="isDisabled"
+          [ngClass]="'td-row' + r + ' td-col' + c">
+
+          <div
+            class="cell"
+            [ngClass]="'cell-row' + r + ' cell-col' + c"
+            [class.player1]="col === playerValue.Player1"
+            [class.player2]="col === playerValue.Player2">
+          </div>
+
+        </td>
+      </tr>
+    </table>
+
+    <div
+      class="board-overlay"
+      *ngIf="winnerPlayer?.id && currentPlayer?.id"
+      [style.lineHeight]="tableEl.clientHeight + 'px'"
+      [class.winner]="winnerPlayer.id === currentPlayer.id"
+      [class.loser]="winnerPlayer.id !== currentPlayer.id">
+      <span *ngIf="winnerPlayer.id === currentPlayer.id">You win</span>
+      <span *ngIf="winnerPlayer.id !== currentPlayer.id">You lose</span>
+    </div>
+
+  </div>
+
+</div>

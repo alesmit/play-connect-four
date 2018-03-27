@@ -1,0 +1,31 @@
+<mat-progress-bar
+  *ngIf="loading; else contentLoaded"
+  color="accent"
+  mode="indeterminate">
+</mat-progress-bar>
+
+<ng-template #contentLoaded>
+  <ng-container>
+
+    <app-players-hud
+      [players]="players$ | async"
+      [activePlayer]="activePlayer$ | async">
+    </app-players-hud>
+
+    <app-board
+      (mark)="onMark($event)"
+      [isDisabled]="!isMyTurn || playersCount < 2 || (winnerPlayer$ | async)?.id"
+      [currentPlayer]="currentPlayer"
+      [winnerPlayer]="winnerPlayer$ | async"
+      [settings]="settings$ | async"
+      [board]="board$ | async">
+    </app-board>
+
+    <app-hud
+      [playersCount]="playersCount"
+      [matchId]="matchId$ | async"
+      [currentPlayer]="currentPlayer">
+    </app-hud>
+
+  </ng-container>
+</ng-template>

@@ -1,0 +1,122 @@
+@import '../../node_modules/@angular/material/theming';
+
+@include mat-core();
+
+// http://mcg.mbitson.com/
+
+$mat-custom-primary: (
+  50 : #fbe9e7,
+  100 : #f5c7c3,
+  200 : #eea29b,
+  300 : #e77c73,
+  400 : #e16055,
+  500 : #dc4437,
+  600 : #d83e31,
+  700 : #d3352a,
+  800 : #ce2d23,
+  900 : #c51f16,
+  A100 : #fff7f6,
+  A200 : #ffc6c3,
+  A400 : #ff9590,
+  A700 : #ff7c77,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$mat-custom-accent: (
+  50 : #e9e9e9,
+  100 : #c9c9c9,
+  200 : #a5a5a5,
+  300 : #808080,
+  400 : #656565,
+  500 : #4a4a4a,
+  600 : #434343,
+  700 : #3a3a3a,
+  800 : #323232,
+  900 : #222222,
+  A100 : #f17e7e,
+  A200 : #ec5151,
+  A400 : #ff0a0a,
+  A700 : #f00000,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$mat-custom-warn: (
+  50 : #f7e9e6,
+  100 : #ebc8c2,
+  200 : #dea499,
+  300 : #d18070,
+  400 : #c76451,
+  500 : #bd4932,
+  600 : #b7422d,
+  700 : #ae3926,
+  800 : #a6311f,
+  900 : #982113,
+  A100 : #ffcfcb,
+  A200 : #ffa198,
+  A400 : #ff7265,
+  A700 : #ff5b4c,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$custom-primary: mat-palette($mat-custom-primary);
+$custom-accent: mat-palette($mat-custom-accent);
+$custom-warn: mat-palette($mat-custom-warn);
+
+$custom-theme: mat-light-theme($custom-primary, $custom-accent, $custom-warn);
+
+@include angular-material-theme($custom-theme);
+
+.dark-custom-theme {
+  $dark-custom-primary: mat-palette($mat-custom-primary);
+  $dark-custom-accent: mat-palette($mat-custom-accent);
+  $dark-custom-warn: mat-palette($mat-custom-warn);
+
+  $dark-custom-theme: mat-dark-theme($dark-custom-primary, $dark-custom-accent, $dark-custom-warn);
+
+  @include angular-material-theme($dark-custom-theme);
+}
