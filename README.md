@@ -22,6 +22,7 @@ Make sure to update your project credentials in [environment settings](src/envir
 ## To Do
 - Add i18n using [ngx-translate](https://github.com/ngx-translate/core)
 - Implement a better state management with [@ngrx](https://github.com/ngrx/platform) store and effects.
+- Improve UE (ideas are welcome!)
 
 ## Contributing
 1. Fork this project
