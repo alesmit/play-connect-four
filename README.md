@@ -1,3 +1,7 @@
+# Note
+
+⚠️ This project is no longer maintained.
+
 # Play Connect Four
 Connect Four (aka "Four in a row") Progressive Web App game made with Angular and Firebase.
 
