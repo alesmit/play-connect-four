@@ -1,7 +1,7 @@
 # Play Connect Four
 Connect Four (aka "Four in a row") Progressive Web App game made with Angular and Firebase.
 
-![Connect Four demo](https://alesmit.github.io/demo/play-connect-four/connect-four-demo.gif)
+![Connect Four demo](https://raw.githubusercontent.com/alesmit/play-connect-four/master/demo.gif)
 
 ## Play :red_circle: :large_blue_circle:
 Go here and enjoy some spare time with your remote pal https://play-connect-four.firebaseapp.com  
